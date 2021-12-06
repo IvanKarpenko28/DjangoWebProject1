@@ -1,0 +1,58 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+{% if form != None %}
+ <br><h2>Пожалуйста оставьте свой отзыв</h2><br>
+  <div>
+     <form method="post">
+         {% csrf_token %}
+         <label for="{{ form.name.id_for_label }}">{{ form.name.label }}</label>
+         {{ form.name }}<br><br>
+         <label for="{{ form.type.id_for_label }}">{{ form.type.label }}</label>
+         {{ form.type }}<br><br>
+         <label for="{{ form.answer.id_for_label }}">{{ form.answer.label }}</label>
+         {{ form.answer }}
+         <label for="{{ form.notice.id_for_label }}">{{ form.notice.label }}</label>
+         {{ form.notice }}<br><br>
+         <label for="{{ form.feedback.id_for_label }}">{{ form.feedback.label }}</label>
+         {{ form.feedback }}<br><br>
+         <input type="submit" value="Отправить" id="sb"/>
+     </form>
+  </div>
+{% else %}
+ <br><h2>Благодарим за отзыв!</h2><br>
+<ul>
+    <li><span>Заголовок:</span> {{ data.name }}</li>
+    <li><span>Тип отзыва:</span> {{ data.type }}</li>
+    <li><span>Отзыв требует ответа?</span> {{ data.answer }}</li>
+    <li><span>Получить ответ на Email?</span> {{ data.notice }}</li>
+    <li><span>Отзыв:</span> {{ data.feedback }}</li>
+</ul>
+{% endif %}
+
+<script>
+    function sb_mouseover()
+    {
+        $('#sb').css('color', 'MediumBlue')
+    }
+    $('#sb').mouseover(sb_mouseover);
+
+    function sb_mouseout()
+    {
+        $('#sb').css('color', 'black')
+    }
+    $('#sb').mouseout(sb_mouseout);
+
+    function id_feedback_focus()
+    {
+        $('#id_feedback').css('background-color', 'khaki')
+    }
+    $('#id_feedback').focus(id_feedback_focus);
+
+    function id_feedback_blur()
+    {
+        $('#id_feedback').css('background-color', 'white')
+    }
+    $('#id_feedback').blur(id_feedback_blur);
+</script>
+
+{% endblock %}

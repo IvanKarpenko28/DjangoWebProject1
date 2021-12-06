@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>DjangoWebProject1</Name>
+    <RootNamespace>DjangoWebProject1</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>e9daa958-842a-4a1f-941b-f1053680f690</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>DjangoWebProject1.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="DjangoWebProject1\__init__.py" />
+    <Compile Include="DjangoWebProject1\settings.py" />
+    <Compile Include="DjangoWebProject1\urls.py" />
+    <Compile Include="DjangoWebProject1\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="DjangoWebProject1\" />
+    <Folder Include="DjangoWebProject1\.git\" />
+    <Folder Include="DjangoWebProject1\.git\hooks\" />
+    <Folder Include="DjangoWebProject1\.git\info\" />
+    <Folder Include="DjangoWebProject1\.git\logs\" />
+    <Folder Include="DjangoWebProject1\.git\logs\refs\" />
+    <Folder Include="DjangoWebProject1\.git\logs\refs\heads\" />
+    <Folder Include="DjangoWebProject1\.git\logs\refs\remotes\" />
+    <Folder Include="DjangoWebProject1\.git\logs\refs\remotes\origin\" />
+    <Folder Include="DjangoWebProject1\.git\objects\" />
+    <Folder Include="DjangoWebProject1\.git\objects\info\" />
+    <Folder Include="DjangoWebProject1\.git\objects\pack\" />
+    <Folder Include="DjangoWebProject1\.git\refs\" />
+    <Folder Include="DjangoWebProject1\.git\refs\heads\" />
+    <Folder Include="DjangoWebProject1\.git\refs\remotes\" />
+    <Folder Include="DjangoWebProject1\.git\refs\remotes\origin\" />
+    <Folder Include="DjangoWebProject1\.git\refs\tags\" />
+    <Folder Include="DjangoWebProject1\.vs\" />
+    <Folder Include="DjangoWebProject1\.vs\DjangoWebProject1\" />
+    <Folder Include="DjangoWebProject1\.vs\DjangoWebProject1\v15\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\templates\app\blogpost.html" />
+    <Content Include="app\templates\app\feedback.html" />
+    <Content Include="app\templates\app\links.html" />
+    <Content Include="app\templates\app\newpost.html" />
+    <Content Include="app\templates\app\news.html" />
+    <Content Include="app\templates\app\registration.html" />
+    <Content Include="app\templates\app\videopost.html" />
+    <Content Include="DjangoWebProject1\.gitignore" />
+    <Content Include="DjangoWebProject1\.git\config" />
+    <Content Include="DjangoWebProject1\.git\description" />
+    <Content Include="DjangoWebProject1\.git\HEAD" />
+    <Content Include="DjangoWebProject1\.git\hooks\applypatch-msg.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\commit-msg.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\fsmonitor-watchman.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\post-update.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\pre-applypatch.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\pre-commit.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\pre-merge-commit.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\pre-push.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\pre-rebase.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\pre-receive.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\push-to-checkout.sample" />
+    <Content Include="DjangoWebProject1\.git\hooks\update.sample" />
+    <Content Include="DjangoWebProject1\.git\index" />
+    <Content Include="DjangoWebProject1\.git\info\exclude" />
+    <Content Include="DjangoWebProject1\.git\logs\HEAD" />
+    <Content Include="DjangoWebProject1\.git\logs\refs\heads\main" />
+    <Content Include="DjangoWebProject1\.git\logs\refs\remotes\origin\HEAD" />
+    <Content Include="DjangoWebProject1\.git\objects\pack\pack-da5904575f08f0b2f369ea5b9a2301376bd3df0e.idx" />
+    <Content Include="DjangoWebProject1\.git\objects\pack\pack-da5904575f08f0b2f369ea5b9a2301376bd3df0e.pack" />
+    <Content Include="DjangoWebProject1\.git\packed-refs" />
+    <Content Include="DjangoWebProject1\.git\refs\heads\main" />
+    <Content Include="DjangoWebProject1\.git\refs\remotes\origin\HEAD" />
+    <Content Include="DjangoWebProject1\.vs\DjangoWebProject1\v15\.suo" />
+    <Content Include="DjangoWebProject1\.vs\slnx.sqlite" />
+    <Content Include="DjangoWebProject1\.vs\VSWorkspaceState.json" />
+    <Content Include="DjangoWebProject1\README.md" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

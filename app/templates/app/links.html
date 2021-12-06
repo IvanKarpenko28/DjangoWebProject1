@@ -1,0 +1,10 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+
+<a href ="https://www.yves-rocher.ru/" target="_blank"> <img src="{% static 'app/content/yves-rocher.jpg' %}" alt="Logo 1" width="128" hight="128"/></a>
+<a href ="https://shop.salonsecret.ru/category/haircare/brend/matrix" target="_blank"> <img src="{% static 'app/content/matrix.jpg' %}" alt="Logo 2" width="128" hight="128" /></a>
+<a href ="https://estel-shop.ru/" target="_blank"> <img src="{% static 'app/content/estel.jpg' %}" alt="Logo 3" width="128" hight="128"/></a>
+
+{% endblock %}
