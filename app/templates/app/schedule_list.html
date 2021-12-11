@@ -1,0 +1,13 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% for schedule in schedules %}
+<p>{{ schedule.service.title }}</p>
+<h6>{{ schedule.client.username }}</h6>
+<p>{{ schedule.begin }}</p>
+<p>{{ schedule.end }}</p>
+<button class="btn btn-danger" onclick="window.location.href='{% url 'schedule_delete' schedule.id %}'">Отменить</button>
+<hr>
+{% endfor %}
+{% endblock %}

@@ -12,6 +12,7 @@ from django.contrib.auth import get_user_model
 
 
 User = get_user_model()
+
     
 
 class Profile(models.Model):
@@ -20,6 +21,9 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.user.username
+    class Meta: 
+        verbose_name = "менеджер"
+        verbose_name_plural = "менеджеры"
 admin.site.register(Profile)
 
 class Blog(models.Model):

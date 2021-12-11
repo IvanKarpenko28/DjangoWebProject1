@@ -2,8 +2,10 @@
 
 {% block content %}
 
-<h3>{{ message }}</h3>
-
-<div><p>Услуги парикмахеров и визажистов по выгодной цене.</p></div>
-
+{% for service in services %}
+<h3>{{ service.title }}</h3>
+<p>{{ service.description }}</p>
+<hr>
+{% endfor %}
+<button class="btn btn-success" onclick="window.location.href='{% url 'sign_up' %}'">Записаться</button>
 {% endblock %}

@@ -81,6 +81,7 @@
     <Content Include="app\templates\app\newpost.html" />
     <Content Include="app\templates\app\news.html" />
     <Content Include="app\templates\app\registration.html" />
+    <Content Include="app\templates\app\schedule_list.html" />
     <Content Include="app\templates\app\videopost.html" />
     <Content Include="DjangoWebProject1\.gitignore" />
     <Content Include="DjangoWebProject1\.git\config" />

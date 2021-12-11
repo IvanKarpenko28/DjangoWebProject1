@@ -1,0 +1,20 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>
+        {{ message }}</li>
+        {% endfor %}
+</ul>
+{% endif %}
+
+<form method="post">
+    {{ form }}
+    {% csrf_token %}
+    <button class="btn btn-success" type="submit">Записаться</button>
+</form>
+
+{% endblock %}

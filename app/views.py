@@ -14,7 +14,6 @@ from .models import Comment
 from .forms import CommentForm
 from .forms import BlogForm
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 
 
 def home(request):
@@ -69,8 +68,6 @@ def links (request):
 
 @login_required
 def feedback (request):
-    if request.user.profile.is_manager:
-        return redirect('home')
     assert isinstance(request, HttpRequest)
     data = None
     
@@ -131,8 +128,6 @@ def registration (request):
 
 def blog(request):
     """Renders the blog page."""
-    if request.user.profile.is_manager:
-        return redirect('home')
     assert isinstance(request, HttpRequest)
     posts = Blog.objects.all() 
 
@@ -149,8 +144,6 @@ def blog(request):
 @login_required
 def blogpost(request, parametr):
     """Renders the blogpost page."""
-    if request.user.profile.is_manager:
-        return redirect('home')
     post_1 = Blog.objects.get(id=parametr)
     comments = Comment.objects.filter(post=parametr)
     if request.method == "POST": 
@@ -179,8 +172,6 @@ def blogpost(request, parametr):
 @login_required
 def newpost(request):
     """Renders the blogpost page."""
-    if request.user.profile.is_manager:
-        return redirect('home')
     assert isinstance(request, HttpRequest)
 
     if request.method == "POST": 
@@ -217,6 +208,3 @@ def videopost(request):
             'year':datetime.now().year,
         }
     )
-def my_image(request):
-    image_data = open("app/content/favicon.ico", "rb").read()
-    return HttpResponse(image_data, mimetype="image/png")
