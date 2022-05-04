@@ -2,6 +2,7 @@
 <form id="logoutForm" action="/logout" method="post" class="navbar-right">
     {% csrf_token %}
     <ul class="navbar-nav navbar-right">
+        <li class="nav-item"><span class="navbar-brand">{{notifys_count}}</span></li>
         <li class="nav-item"><span class="navbar-brand">{{ user.username }}</span></li>
         <li class="nav-item"><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Выйти</a></li>
     </ul>
@@ -11,6 +12,7 @@
 
 <ul class="navbar-nav navbar-right">
     <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Войти</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'registration' %}">Регистрация</a></li>
 </ul>
 
 {% endif %}

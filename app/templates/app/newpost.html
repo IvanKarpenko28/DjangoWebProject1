@@ -1,11 +1,11 @@
-﻿{% extends "app/layout.html" %}
+{% extends "app/layout.html" %}
 {% block content %}
 
-<h3>Добавить статью</h3>
-<form method="POST" ectype="multipart/form-data"> {% csrf_token %}
+<h2>Добавить новость</h2> <br>
+<form method="post" enctype="multipart/form-data"> {% csrf_token %}
     <div>
-        {{blogform.as_p }}
-        <button type="submit" class="save btn btn-default"> Сохранить статью </button>
+        {{ blogform.as_p }}
+        <button type="submit" class="btn btn-success"> Сохранить новость </button>
     </div>
 </form>
 

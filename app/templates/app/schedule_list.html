@@ -2,12 +2,15 @@
 
 {% block content %}
 
+<h2>Записи</h2>
+
 {% for schedule in schedules %}
-<p>{{ schedule.service.title }}</p>
-<h6>{{ schedule.client.username }}</h6>
-<p>{{ schedule.begin }}</p>
-<p>{{ schedule.end }}</p>
-<button class="btn btn-danger" onclick="window.location.href='{% url 'schedule_delete' schedule.id %}'">Отменить</button>
+
 <hr>
+<p><h3>{{ schedule.service.title }}</h3></p>
+<h6>{{ schedule.client.username }}</h6>
+<p> c {{ schedule.begin }} </p> 
+<p> по {{ schedule.end }} </p>
+<button class="btn btn-danger" onclick="window.location.href='{% url 'schedule_delete' schedule.id %}'">Отменить</button>
 {% endfor %}
 {% endblock %}

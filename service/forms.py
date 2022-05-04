@@ -1,5 +1,5 @@
 from django import forms
-from .models import Service, Schedule
+from .models import Service, Schedule, Notify
 
 
 
@@ -10,3 +10,10 @@ SERVICE_CHOICES = [(service.id, service.title) for service in Service.objects.al
 class ScheduleForm(forms.Form):
     begin = DateTimeLocalField(label='Время записи')
     service = forms.ChoiceField(label= 'Услуга', choices=SERVICE_CHOICES, widget=forms.Select)
+
+
+class NotifyForm (forms.ModelForm):
+    class Meta:
+        model = Notify 
+        fields = ('text',) 
+        labels = {'text': "Уведомление"} 

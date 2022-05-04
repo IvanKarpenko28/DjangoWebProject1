@@ -9,6 +9,8 @@ from datetime import datetime
 from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.contrib.auth import get_user_model
+from django.core.validators import MinLengthValidator
+from django.core.exceptions import ValidationError
 
 
 User = get_user_model()
@@ -30,7 +32,7 @@ class Blog(models.Model):
     title = models.CharField(max_length = 100, unique_for_date = "posted", verbose_name = "Заголовок")
     description = models.TextField(verbose_name = "Краткое содержание")
     content = models.TextField(verbose_name = "Полное содержание")
-    image = models.FileField(default = 'temp.jpg', verbose_name = "Картинка")
+    image = models.FileField(verbose_name = "Картинка")
     author = models.ForeignKey(User, null=True, blank=True, on_delete = models.SET_NULL, verbose_name = "Автор")
     posted = models.DateTimeField(default = datetime.now(), db_index = True, verbose_name = "Опубликована")
 
@@ -63,3 +65,26 @@ class Comment(models.Model):
         ordering = ["-date"] 
 
 admin.site.register(Comment)
+
+
+def phone_validator(value):
+    if value[0] != '+':
+        raise ValidationError('Номер телефона должен начинаться с +!')
+    if not value[1:].isdigit():
+        raise ValidationError('Номер телефона должен состоять из цифр и знака +!')
+
+
+
+class CustomerData(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, verbose_name='пользователь')
+    phone = models.CharField(max_length=12, validators=[
+            MinLengthValidator(12),
+            phone_validator,
+        ], unique=True)
+
+    def __str__(self):
+        return self.user.username
+
+admin.site.register(CustomerData)
+
+

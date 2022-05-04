@@ -15,7 +15,7 @@ from django.contrib import admin
 
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.conf import settings
+from django.conf import settings 
 import service.views
 
 
@@ -25,15 +25,13 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', app.views.home, name='home'),
     url(r'^news$', app.views.blog, name='news'),
-    url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about$', service.views.service_list, name='about'),
     url(r'^schedule_list$', service.views.schedule_list, name='schedule_list'),
+    url(r'^notify_list$', service.views.notify_list, name='notify_list'),
     url(r'^schedule/(?P<pk>\d+)/delete$', service.views.schedule_delete, name='schedule_delete'),
+    url(r'^notify/(?P<pk>\d+)/delete$', service.views.notify_delete, name='notify_delete'),
     url(r'^sign_up$', service.views.sign_up_for_a_service, name='sign_up'),
-    url(r'^links$', app.views.links, name='links'),
     url(r'^newpost$', app.views.newpost, name='newpost'),
-    url(r'^feedback$', app.views.feedback, name='feedback'),
-    url(r'^videopost$', app.views.videopost, name='videopost'),
     url(r'^(?P<parametr>\d+)/$', app.views.blogpost, name='blogpost'),
     url(r'^login/$',
         django.contrib.auth.views.login,

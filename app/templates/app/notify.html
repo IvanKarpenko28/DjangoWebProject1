@@ -1,0 +1,13 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>Уведомления ({{notifys_count}})</h2>
+
+{% for notify in notify %}
+<hr>
+<new> {{ notify.whom }}, ваша запись на услугу "{{ notify.sdel }}" была отменена</new> <deta>{{ notify.date }}</deta><br/>
+<button class="btn btn-secondary btn-sm" onclick="window.location.href='{% url 'notify_delete' notify.id %}'">Уведомление прочитано</button>
+{% endfor %}
+
+{% endblock %}

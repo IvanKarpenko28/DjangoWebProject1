@@ -1,33 +1,33 @@
-﻿{% extends "app/layout.html" %}
+{% extends "app/layout.html" %}
 
 {% block content %}
 {% load staticfiles %}
 <h2> {{post_1.title}} </h2>
     
- <img src="{{ post_1.image.url }}" alt="Картинка" width="300" height="200"/>
+<img src="{{ post_1.image.url }}" alt="Картинка" />
 
 {% autoescape off %}
 <p> {{ post_1.content|linebreaksbr }} </p>
 {% endautoescape %}
 
+<p><a href="{% url 'news' %}"> Вернуться к списку новостей </a> </p>
+
 {% if user.is_authenticated %}
-   <h3>Добавить комментарий</h3>
-   <form method="POST" >{% csrf_token %} 
-   <div>
-       {{form.as_p}}
-       <button type="submit" class="save btn btn-default" > Отправить комментарий </button>
-   </div>
-   </form>
+<h3>Добавить комментарий</h3>
+<form method="POST" >{% csrf_token %} 
+    <div>
+        {{form.as_p}}
+        <button type="submit" class="btn btn-success" > Сохранить комментарий </button>
+    </div>
+    </form>
 {% else %}
-   <h3> Для добавления своего комментария, пожалуйста, авторизуйтесь </h3>
+<h3> Для добавления своего комментария, пожалуйста, авторизуйтесь </h3>
 {% endif %}
 
 {% for comment in comments %}
 <hr/>
-<h7> {{comment.date}} </h7>
-<h5> {{comment.author}} </h5>
+<h5> {{comment.author}} <h7>{{comment.date}}</h7> </h5>
 <p> {{comment.text|linebreaksbr}} </p>
 {% endfor %}
 
-<p><a href="{% url 'news' %}"> Назад </a> </p>
 {% endblock %}

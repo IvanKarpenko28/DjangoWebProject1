@@ -7,10 +7,12 @@
 <p class="lead">После того, как вы запишитесь на услуги, пожалуйста, проверьте раздел "Управление записями" и убедитесь, что ваша запись появилась в нём. Вдобавок, вы сможете самостоятельно отменить запись в этом разделе. Не забывайте следить за новостями, где мы будем сообщать на какие дни нельзя записаться и причины такого развития событий. Записи на такие даты будут удаляться без вашего участия! Благодарим, что выбрали нас!</p>
 </div>
 
+<button class="btn btn-success btn-lg btn-block" onclick="window.location.href='{% url 'sign_up' %}'">Записаться</button><hr/>
+
 {% for service in services %}
-<h3>{{ service.title }}</h3>
-<p>{{ service.description }}</p>
+<z3>{{ service.title }}</z3> <ab>(продолжительность около <h7>{{ service.length.hour }}</h7> часов <h7>{{ service.length.minute }}</h7> минут)</ab>
+<news><p>{{ service.description }}</p></news>
 <hr>
 {% endfor %}
-<button class="btn btn-success" onclick="window.location.href='{% url 'sign_up' %}'">Записаться</button>
+
 {% endblock %}

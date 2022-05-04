@@ -5,9 +5,15 @@ Definition of forms.
 from django import forms
 from django.db import models
 from .models import Comment
+from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
-from .models import Blog
+from .models import Blog, phone_validator
+from django.contrib.auth.forms import UserCreationForm
+from django.core.validators import MinLengthValidator
+
+User = get_user_model()
+
 
 class BootstrapAuthenticationForm(AuthenticationForm):
     """Authentication form which uses boostrap CSS."""
@@ -20,13 +26,6 @@ class BootstrapAuthenticationForm(AuthenticationForm):
                                    'class': 'form-control',
                                    'placeholder':'Пароль'}))
 
-class Feedback(forms.Form):
-    name = forms.CharField(label= 'Заголовок', min_length=2, max_length=100)
-    type = forms.ChoiceField(label= 'Тип отзыва', choices=(('1','Положительный'),('2','Отрицательный'),('3','Нейтральный')), initial=1)
-    answer = forms.ChoiceField(label= 'Отзыв требует ответа?', choices=[('1','Да'),('2','Нет')], widget=forms.RadioSelect, initial=2)
-    notice = forms.BooleanField(label= 'Отправить ответ на Email', required=False);
-    feedback = forms.CharField(label= 'Введите отзыв', widget=forms.Textarea(attrs={'rows':7,'cols':40}))
-
 class CommentForm (forms.ModelForm):
     class Meta:
         model = Comment 
@@ -36,5 +35,14 @@ class CommentForm (forms.ModelForm):
 class BlogForm (forms.ModelForm):
     class Meta:
         model = Blog 
-        fields = ('title','description','content','image',) 
+        fields = ('title','description','content','image') 
         labels = {'title' : "Заголовок", 'description' : "Краткое содержание", 'content' : "Полное содержание",'image' : "Картинка"} 
+
+class RegistrationForm(UserCreationForm):
+    phone = forms.CharField(max_length=12, validators=[
+            phone_validator,
+            MinLengthValidator(12),
+        ], label='Номер телефона')
+    class Meta:
+        fields = ['username', 'phone']
+        model = User

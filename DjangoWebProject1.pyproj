@@ -76,13 +76,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\templates\app\blogpost.html" />
-    <Content Include="app\templates\app\feedback.html" />
-    <Content Include="app\templates\app\links.html" />
     <Content Include="app\templates\app\newpost.html" />
     <Content Include="app\templates\app\news.html" />
+    <Content Include="app\templates\app\notify.html" />
     <Content Include="app\templates\app\registration.html" />
     <Content Include="app\templates\app\schedule_list.html" />
-    <Content Include="app\templates\app\videopost.html" />
     <Content Include="DjangoWebProject1\.gitignore" />
     <Content Include="DjangoWebProject1\.git\config" />
     <Content Include="DjangoWebProject1\.git\description" />
@@ -139,7 +137,6 @@
     <Content Include="app\static\app\scripts\respond.min.js" />
     <Content Include="app\static\app\scripts\_references.js" />
     <Content Include="app\templates\app\about.html" />
-    <Content Include="app\templates\app\contact.html" />
     <Content Include="app\templates\app\index.html" />
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
